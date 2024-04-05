@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.non_field_errors %}
+    {% for message in form.non_field_errors %}
+            {{ message }}
+    {% endfor %}
+{% endif %}
+<form class="w-50 m-auto" method="post">
+    {% csrf_token %}
+    <label for="email">Email</label>
+    {{ form.email }} <br> <br>
+    <label for="password"  type="password" >Password</label>
+    {{ form.password }} <br> <br>
+    <label for="confirm_password">Confirm Password</label>
+    {{ form.confirm_password }} <br> <br>
+    <input class='btn btn-warning' type="submit" />
+</form>
+
+{% endblock  %}

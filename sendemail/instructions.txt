@@ -1,0 +1,22 @@
+1. Created a Custom User model which inherits AbstractUser
+
+2.. Created a CustomUser Manger model 
+3. created the registration form 
+4. Created sign_up view (here a next parameter is introduced) 
+
+--- To send a verification mail, 4 views are used here. Though I didn't need the last view here as it was causing errors.
+
+1. verify_email: Sends the link to user's verify_email
+2. verify_email_done: Tells the user to check email 
+3. verify_email_confirmed: verifies the link from backend
+4. verify_email_complete: redirects user
+
+to actually show the message to the user- 
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
